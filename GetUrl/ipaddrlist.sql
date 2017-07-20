@@ -1,3 +1,4 @@
+﻿
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -31,8 +32,24 @@ CREATE TABLE `iplist` (
   `pos` varchar(50) DEFAULT NULL,
   `addr` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iplist
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for `ipuser`
+-- ----------------------------
+DROP TABLE IF EXISTS `ipuser`;
+CREATE TABLE `ipuser` (
+  `uid` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ipuser
+-- ----------------------------
+INSERT INTO `ipuser` VALUES ('1', 'daolang', '0c5c6be6038c3d7b9d43b102920e5985');

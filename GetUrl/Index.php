@@ -1,4 +1,13 @@
-<a href ="Add.html">Add Item</a>
+<?php
+session_start();
+
+//检测是否登录，若没登录则转向登录界面
+if(!isset($_SESSION['userid'])){
+    header("Location:login.html");
+    exit();
+}
+?>
+<a href ="AddH.php">Add Item</a>
 
 <!-- this table is show all info in database -->
 <table >

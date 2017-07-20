@@ -21,7 +21,7 @@ elseif(isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($
 
 if (isset($_GET["id"]))
 {
-    $id=$_GET["id"];
+    $id=addslashes($_GET["id"]);
 
 }
 if (empty($id))
