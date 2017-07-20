@@ -7,24 +7,24 @@ $content="";
 
 if (isset($_POST["username"]))
 {
-    $name=$_POST["username"];
+    $name=trim($_POST["username"]);
 
 }
 if (isset($_POST["jmpurl"]))
 {
-    $jmpurl=$_POST["jmpurl"];
+    $jmpurl=trim($_POST["jmpurl"]);
 }
 if (isset($_POST["title"]))
 {
-    $title=$_POST["title"];
+    $title=trim($_POST["title"]);
 }
 if (isset($_POST["png"]))
 {
-    $png=$_POST["png"];
+    $png=trim($_POST["png"]);
 }
 if (isset($_POST["content"]))
 {
-    $content=$_POST["content"];
+    $content=trim($_POST["content"]);
 }
 if (empty($name)||empty($jmpurl)||empty($title)||empty($png)||empty($content))
 {
