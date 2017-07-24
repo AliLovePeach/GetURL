@@ -1,4 +1,5 @@
 <?php
+header('content-type:text/html;charset=utf-8');
 session_start();
 
 //检测是否登录，若没登录则转向登录界面
@@ -77,7 +78,7 @@ if(!isset($_SESSION['userid'])){
     </tr>
     <?php
     require("config.php");
-    header('content-type:text/html;charset=utf-8');
+
     //连接数据库
 
     try {
@@ -97,7 +98,7 @@ if(!isset($_SESSION['userid'])){
             <td style="width: 260px;"><?= $row['randid'] ?></td>
             <td style="width: 40px;"><a href="lookurl.php?id=<?= $row['id'] ?>">LookURL</a></td>
             <td style="width: 40px;"><a href="lookip.php?id=<?= $row['id'] ?>">LookIP</a></td>
-            <td style="width: 40px;"><a href="delete.php?id=<?= $row['id'] ?>">Delete</a></td>
+            <td style="width: 40px;"><a href="Delete.php?id=<?= $row['id'] ?>">Delete</a></td>
 
         </tr>
 

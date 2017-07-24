@@ -1,4 +1,5 @@
 <?php
+header('content-type:text/html;charset=utf-8');
 session_start();
 
 //检测是否登录，若没登录则转向登录界面
@@ -60,7 +61,7 @@ try {
         print_r($pdo->errorInfo());
        die(0);
 }
-echo"<script>alert(\"生成完成！\"); top.location='index.php'; </script>";
+echo"<script>alert(\"生成完成！\"); top.location='Index.php'; </script>";
 function build_order_no()
 {
     return base64_encode (date('Ymd').substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 8));

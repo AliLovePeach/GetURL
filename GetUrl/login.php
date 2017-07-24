@@ -1,4 +1,5 @@
 <?php
+header('content-type:text/html;charset=utf-8');
 session_start();
 
 //注销登录
@@ -32,7 +33,7 @@ foreach ($dbh->query("select uid from ipuser where username='$username' and pass
     //登录成功
     $_SESSION['username'] = $username;
     $_SESSION['userid'] = $row['uid'];
-    echo"<script> top.location='index.php'; </script>";
+    echo"<script> top.location='Index.php'; </script>";
     exit;
 }
 

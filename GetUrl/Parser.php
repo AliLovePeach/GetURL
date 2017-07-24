@@ -1,4 +1,5 @@
 <?php
+header('content-type:text/html;charset=utf-8');
 $id=0;
 
 //获取IP地址

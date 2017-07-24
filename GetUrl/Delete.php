@@ -1,4 +1,5 @@
 <?php
+header('content-type:text/html;charset=utf-8');
 session_start();
 
 //检测是否登录，若没登录则转向登录界面
@@ -48,7 +49,7 @@ if ($dbh->errorCode() != '00000')
     die(0);
 }
 
-echo"<script>alert(\"删除成功！\"); top.location='index.php'; </script>";
+echo"<script>alert(\"删除成功！\"); top.location='Index.php'; </script>";
 
 
 ?>
