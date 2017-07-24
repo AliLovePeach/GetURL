@@ -76,16 +76,12 @@ if(!isset($_SESSION['userid'])){
         <th style="width: 40px;">DELETE</th>
     </tr>
     <?php
+    require("config.php");
     header('content-type:text/html;charset=utf-8');
     //连接数据库
-    $dbms='mysql';
-    $host='localhost';
-    $dbName='ipaddrlist';
-    $user='root';
-    $pass='';
-    $dsn="$dbms:host=$host;dbname=$dbName";
+
     try {
-        $dbh = new PDO($dsn, $user, $pass);
+        $dbh = new PDO($g_dsn, $g_user, $g_pass);
     } catch (PDOException $e)
     {
         echo 'Connection failed: ' . $e->getMessage();

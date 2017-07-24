@@ -85,15 +85,9 @@ if ($id==0)
     die(0);
 }
 
-
-$dbms='mysql';
-$host='localhost';
-$dbName='ipaddrlist';
-$user='root';
-$pass='';
-$dsn="$dbms:host=$host;dbname=$dbName";
+require("config.php");
 try {
-    $dbh = new PDO($dsn, $user, $pass);
+    $dbh = new PDO($g_dsn, $g_user, $g_pass);
 } catch (PDOException $e)
 {
     echo 'Connection failed: ' . $e->getMessage();

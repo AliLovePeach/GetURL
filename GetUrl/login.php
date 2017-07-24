@@ -10,7 +10,7 @@ if(isset($_POST['action'])){
         exit;
     };
 }
-
+require("config.php");
 
 //登录
 if(!isset($_POST['submit'])){
@@ -20,14 +20,9 @@ $username = addslashes(htmlspecialchars($_POST['username']));
 $password = MD5($_POST['password']);
 
 //包含数据库连接文件
-$dbms='mysql';
-$host='localhost';
-$dbName='ipaddrlist';
-$user='root';
-$pass='';
-$dsn="$dbms:host=$host;dbname=$dbName";
+
 try {
-    $dbh = new PDO($dsn, $user, $pass);
+    $dbh = new PDO($g_dsn, $g_user, $g_pass);
 } catch (PDOException $e)
 {
     echo 'Connection failed: ' . $e->getMessage();

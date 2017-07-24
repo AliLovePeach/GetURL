@@ -8,7 +8,7 @@ if(!isset($_SESSION['userid'])){
 }
 ?>
 <?php
-
+require("config.php");
 
 if (isset($_GET["id"]))
 {
@@ -24,14 +24,9 @@ if ($id==0)
 
 
 
-$dbms='mysql';
-$host='localhost';
-$dbName='ipaddrlist';
-$user='root';
-$pass='';
-$dsn="$dbms:host=$host;dbname=$dbName";
+
 try {
-    $dbh = new PDO($dsn, $user, $pass);
+    $dbh = new PDO($g_dsn, $g_user, $g_pass);
 } catch (PDOException $e)
 {
     echo 'Connection failed: ' . $e->getMessage();
