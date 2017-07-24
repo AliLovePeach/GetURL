@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS `ipinfo`;
 CREATE TABLE `ipinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `urlname` varchar(50) NOT NULL,
-  `jmpurl` varchar(50) DEFAULT '',
+  `jmpurl` varchar(300) DEFAULT '',
   `randid` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `png` varchar(250) NOT NULL,
