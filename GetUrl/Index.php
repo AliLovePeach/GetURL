@@ -89,8 +89,9 @@ if(!isset($_SESSION['userid'])){
         echo 'Connection failed: ' . $e->getMessage();
     }
 
-
-    foreach ($dbh->query("SELECT * FROM ipinfo") as $row) {
+    $uid=$_SESSION['userid'];
+    foreach ($dbh->query("SELECT * FROM ipinfo where uid=$uid") as $row)
+    {
         ?>
         <tr>
             <td style="width: 160px;"><?= $row['id'] ?></td>

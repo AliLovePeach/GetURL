@@ -22,7 +22,7 @@ if ($id==0)
 {
     die(0);
 }
-
+$uid=$_SESSION['userid'];
 
 require("config.php");
 
@@ -34,7 +34,8 @@ try {
     echo 'Connection failed: ' . $e->getMessage();
 }
 
-foreach ($dbh->query("SELECT * FROM ipinfo where id=".$id) as $row) {
+foreach ($dbh->query("SELECT * FROM ipinfo where uid=$uid and id=".$id) as $row)
+{
     $title= $row['title'];
     $png= $row['png'];
     $content= $row['content'];

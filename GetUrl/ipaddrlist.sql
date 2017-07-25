@@ -1,4 +1,17 @@
-﻿
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : local
+Source Server Version : 50718
+Source Host           : localhost:3306
+Source Database       : ipaddrlist
+
+Target Server Type    : MYSQL
+Target Server Version : 50718
+File Encoding         : 65001
+
+Date: 2017-07-25 13:38:05
+*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -8,6 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `ipinfo`;
 CREATE TABLE `ipinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
   `urlname` varchar(50) NOT NULL,
   `jmpurl` varchar(300) DEFAULT '',
   `randid` varchar(50) NOT NULL,
@@ -15,7 +29,7 @@ CREATE TABLE `ipinfo` (
   `png` varchar(250) NOT NULL,
   `content` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ipinfo
@@ -27,12 +41,13 @@ CREATE TABLE `ipinfo` (
 DROP TABLE IF EXISTS `iplist`;
 CREATE TABLE `iplist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
   `ipinfo_id` int(11) NOT NULL,
   `ip` varchar(50) NOT NULL,
   `pos` varchar(50) DEFAULT NULL,
   `addr` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iplist
@@ -43,7 +58,7 @@ CREATE TABLE `iplist` (
 -- ----------------------------
 DROP TABLE IF EXISTS `ipuser`;
 CREATE TABLE `ipuser` (
-  `uid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`uid`)

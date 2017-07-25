@@ -93,8 +93,10 @@ try {
 {
     echo 'Connection failed: ' . $e->getMessage();
 }
+$uid=$_SESSION['userid'];
 
-foreach ($dbh->query("SELECT * FROM iplist where ipinfo_id=".$id) as $row) {
+foreach ($dbh->query("SELECT * FROM iplist where uid=$uid and ipinfo_id=".$id) as $row)
+{
     ?>
     <tr>
         <td style="width: 160px;"><?= $row['id'] ?></td>

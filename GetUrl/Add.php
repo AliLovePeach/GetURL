@@ -15,27 +15,27 @@ $jmpurl="";
 $title="";
 $png="";
 $content="";
-
+$uid=$_SESSION['userid'];
 if (isset($_POST["username"]))
 {
-    $name=trim($_POST["username"]);
+    $name=addslashes(trim($_POST["username"]));
 
 }
 if (isset($_POST["jmpurl"]))
 {
-    $jmpurl=trim($_POST["jmpurl"]);
+    $jmpurl=addslashes(trim($_POST["jmpurl"]));
 }
 if (isset($_POST["title"]))
 {
-    $title=trim($_POST["title"]);
+    $title=addslashes(trim($_POST["title"]));
 }
 if (isset($_POST["png"]))
 {
-    $png=trim($_POST["png"]);
+    $png=addslashes(trim($_POST["png"]));
 }
 if (isset($_POST["content"]))
 {
-    $content=trim($_POST["content"]);
+    $content=addslashes(trim($_POST["content"]));
 }
 if (empty($name)||empty($jmpurl)||empty($title)||empty($png)||empty($content))
 {
@@ -55,7 +55,7 @@ try {
 
 
     //在表user_list中插入数据
-    $dbh->exec("insert into ipinfo( urlname, jmpurl, randid,title,png,content) values('$name','$jmpurl','$randId','$title','$png','$content')");
+    $dbh->exec("insert into ipinfo(uid,urlname, jmpurl, randid,title,png,content) values($uid,'$name','$jmpurl','$randId','$title','$png','$content')");
     if ($dbh->errorCode() != '00000')
     {echo "errorInfo为： ";
         print_r($pdo->errorInfo());
