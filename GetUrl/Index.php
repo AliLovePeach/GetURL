@@ -9,6 +9,7 @@ if(!isset($_SESSION['userid'])){
 }
 ?>
 <a href ="AddH.php">Add Item</a>
+<a href ="logout.php">Logout</a>
 <!-- Javascript goes in the document HEAD -->
 <script type="text/javascript">
     function altRows(id){
