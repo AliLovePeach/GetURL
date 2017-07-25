@@ -29,7 +29,7 @@ if (empty($id))
 {
     die(0);
 }
-
+$onlineip = addslashes($onlineip);
 
 require("config.php");
 
